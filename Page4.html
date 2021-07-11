@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+  body {
+    margin: 0px;
+    background-image: url("bg00.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    font-family: Century Gothic;
+  }
+
+.menu {
+  background-color: black;
+}
+
+#navigation {
+display: flex;
+justify-content: center;
+margin:0 auto;
+list-style:none;
+font-family: Century Gothic;
+font-size: 14px;
+}
+
+#navigation li {
+float:left;
+}
+
+#navigation a {
+display:block;
+text-align:center;
+padding: 19px 17px;
+text-decoration:none;
+color: white;
+}
+
+#navigation a:hover {
+  color: orange;
+}
+
+#navigation a.active {
+  color: orange;
+}
+
+table {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  float : left;
+  background-color: white;
+}
+
+table img {
+  padding: 20px;
+}
+
+.contact {
+  position: absolute;
+  top: 23%;
+  left: 70%;
+}
+
+button{
+  border: 0px;
+  background-color: transparent;
+}
+
+button img {
+    border-radius: 5%;
+}
+
+</style>
+</head>
+<body>
+
+<div class="menu">
+  <ul id="navigation">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="Page2.html">Portfolio</a></li>
+    <li><a href="Page5.html">Blogs</a></li>
+    <li><a href="Page3.html">Electives</a></li>
+    <li><a class="active" href="Page4.html">About</a></li>
+  </ul>
+</div>
+
+  <table border="0">
+   <tr>
+   <td><img src="me.jpg" width="250px"></td>
+   <td style="padding: 10px"><h1>About Me</h1>I am an active learner, on the lookout for new challenges and experiences that boost my growth and expand my knowledge. Besides being a Media and Communications student, I occasionally create content for my Graphic Design pages on Instagram and TikTok and take up branding projects.
+<br><br>
+I am also a passionate sports player. I love badminton and throwball, but my most favourite is running races. I also indulge in photography and love capturing people (not literally), so if you spot me with a camera, don't be shy to say Hi.
+<br><br><br>
+</tr>
+  </table>
+
+<div class="contact">
+<input type="radio" onclick="thisor();" name="one" id="option1">GET IN TOUCH<br/><br/>
+<div id="ifContact" style="display:none">
+  <button onclick="location.href='mailto:sakina.hamid@hotmail.com'" type="button" id='smb1' name='email'><img src="socialmediabuttons4.png" width="150px" /></button>
+  <button onclick="location.href='https://www.linkedin.com/in/sakina-hamid-3351051b7'" type="button" id='smb2' name='linkedin'><img src="socialmediabuttons3.png" width="150px" /></button><br/><br/>
+  <button onclick="location.href='https://www.instagram.com/dontkillmyvibez.xo/'" type="button" id='smb3' name='instagram'><img src="socialmediabuttons1.png" width="150px" /></button>
+  <button onclick="location.href='https://twitter.com/SakinaHamid9'" type="button" id='smb4' name='twitter'><img src="socialmediabuttons2.png" width="150px" /></button><br/><br/>
+    </div>
+
+  <input type="radio" onclick="orthat();" name="two" id="option2">LEAVE A COMMENT<br/>
+<div id="ifComment" style="display:none">
+<br><br>
+
+  Name <br>
+  <input type="text" name="input1" id="name" size="20"
+
+  title="A-Z"><br><br>
+
+  Email <br>
+  <input type="text" name="input2" id="email" size="20"
+
+  title="a-z@a-z.com"><br><br>
+
+  Comment
+  <textarea name="comment" rows="6" cols="50" style="border-radius: 4px; border-width: 1px"></textarea>
+
+<br><br>
+  <button type="button" type="submit" onclick="ValidateForm()" style="background-color:white; font-family: Century Gothic; font-size: 14px; padding:10px">Submit</button>
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+function thisor() {
+    if (document.getElementById('option1').checked) {
+        document.getElementById('ifContact').style.display = 'block';
+    }
+    else document.getElementById('ifContact').style.display = 'none';
+
+}
+
+function orthat() {
+    if (document.getElementById('option2').checked) {
+        document.getElementById('ifComment').style.display = 'block';
+    }
+    else document.getElementById('ifComment').style.display = 'none';
+
+}
+
+function ValidateForm(){
+ var input1 = document.getElementById("name").value;
+ var input2 = document.getElementById("email").value;
+
+
+if(/^[A-Za-z]+$/.test(input1) == false){
+  alert("Please enter name using only alphabets.");
+  return false;
+}
+if(/^[a-zA-Z0-9._]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(input2) == false){
+  alert("Error! Invalid Email Address");
+  return false;
+}
+return true;
+}
+
+</script>
+
+</body>
+</html>
